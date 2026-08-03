@@ -76,23 +76,37 @@
   h2.title { font-size: clamp(23px, 2.8vw, 30px); font-weight: 400; margin: 0 0 8px; color: var(--navy); }
   .sub { font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--muted); font-size: 13.5px; max-width: 760px; margin-bottom: 26px; line-height: 1.6; }
   h3.h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: 600; color: var(--navy); margin: 24px 0 9px; }
+  h4.h4 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14.5px; font-weight: 600; color: var(--navy2); margin: 16px 0 6px; }
   p.body, li { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13.5px; line-height: 1.75; color: #333; }
   ul { padding-left: 19px; margin-top: 6px; }
+
+  .split2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 12px; }
+  @media(max-width:760px){.split2{grid-template-columns:1fr;}}
+  .card { border: 1px solid #e3ddcd; background: #fff; border-radius: 6px; padding: 18px 20px; }
+  .badge { display: inline-block; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10px; letter-spacing: .05em; text-transform: uppercase; background: var(--gold-soft); color: #5c4a1a; padding: 3px 9px; border-radius: 20px; margin-bottom: 8px; }
+  .badge.opt { background: #e4f3ec; color: var(--green); }
+  .badge.red { background: #fbe2d6; color: var(--red); }
+
+  .flagcard { border: 1px solid #e7c9b8; background: #fdf3ee; border-radius: 6px; padding: 16px 18px; margin: 12px 0; }
+  .flagcard h4 { margin: 0 0 6px; color: var(--red); font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14.5px; }
 
   table.rt { width: 100%; border-collapse: collapse; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12.8px; margin: 12px 0 18px; }
   table.rt th { background: var(--navy); color: #fff; text-align: left; padding: 8px 11px; font-weight: 600; }
   table.rt td { padding: 8px 11px; border-bottom: 1px solid #e6e0d0; vertical-align: top; }
   table.rt tr:nth-child(even) td { background: #faf7ef; }
 
-  /* DYNAMIC INVOICE & CURRENCY INPUT STYLES */
+  .quote { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13.5px; font-style: italic; color: var(--navy); border-left: 3px solid var(--gold); padding: 11px 16px; margin: 14px 0; background: #fff; }
+  .note { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff8e8; border-left: 3px solid var(--gold); padding: 9px 13px; font-size: 12.5px; color: #5c4a1a; margin: 9px 0 16px; line-height: 1.6; }
+  
   .cost-input-box { background: #fff; border: 1px solid #e3ddcd; border-radius: 6px; padding: 14px; margin: 10px 0; display: flex; align-items: center; justify-content: space-between; gap: 15px; font-family: 'Helvetica Neue', Arial, sans-serif; }
   .cost-input-box input { width: 120px; padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; font-weight: bold; }
+  
   .invoice-card { background: #fff; border: 2px solid var(--navy); border-radius: 8px; padding: 30px; margin-top: 20px; font-family: 'Helvetica Neue', Arial, sans-serif; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
   .invoice-header { display: flex; justify-content: space-between; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
   .invoice-total-banner { background: var(--navy); color: #fff; padding: 16px 20px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; margin-top: 20px; font-weight: bold; }
   .invoice-total-banner .n { color: var(--gold); font-size: 22px; }
 
-  /* LOGIN / AUTH OVERLAY */
+  /* PASSWORD LOGIN SCREEN */
   #auth-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: radial-gradient(circle at center, var(--navy2), var(--navy));
@@ -100,35 +114,32 @@
     font-family: 'Helvetica Neue', Arial, sans-serif;
   }
   .login-card {
-    background: #fff; padding: 40px; border-radius: 12px; width: 100%; max-width: 400px;
+    background: #fff; padding: 40px; border-radius: 12px; width: 100%; max-width: 380px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.4); text-align: center;
   }
   .login-card h2 { color: var(--navy); margin-top: 0; font-size: 24px; }
-  .login-card input { width: 100%; padding: 12px 14px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
-  .login-card button { width: 100%; background: var(--gold); color: #000; border: none; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 15px; margin-top: 10px; }
-  .login-card button:hover { background: #b8913e; color: #fff; }
-
-  /* SUGGESTIONS & USER MGMT UI */
+  .login-card input { width: 100%; padding: 12px 14px; margin: 15px 0; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; text-align: center; }
+  .login-card button { width: 100%; background: var(--gold); color: #000; border: none; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 15px; }
+  
   .sug-box { background: #fff; border: 1px solid #e3ddcd; padding: 16px; border-radius: 6px; margin-bottom: 12px; font-family: 'Helvetica Neue', Arial, sans-serif; }
   .badge-tag { display: inline-block; font-size: 10px; text-transform: uppercase; padding: 3px 8px; border-radius: 12px; background: var(--gold-soft); color: #5c4a1a; font-weight: bold; }
 </style>
 </head>
 <body class="sidebar-pinned">
 
-<!-- PROFESSIONAL LOGIN SCREEN -->
+<!-- LOGIN SCREEN -->
 <div id="auth-overlay">
   <div class="login-card">
     <div style="width: 50px; height: 50px; background: var(--gold); color: var(--navy); font-weight: bold; font-size: 24px; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin: 0 auto 15px;">R</div>
     <h2>RubiNexus Group</h2>
-    <p style="color: #666; font-size: 13px; margin-bottom: 20px;">Secure Enterprise Portal Login</p>
-    <input type="text" id="login-username" placeholder="Enter Username (e.g., Hassan, Huraira, Rida)">
-    <input type="password" id="login-password" placeholder="Enter Secure Passcode">
-    <button onclick="handleLogin()">Authenticate &amp; Access</button>
-    <p id="login-err" style="color: red; font-size: 12px; margin-top: 10px; display: none;">Invalid Username or Passcode!</p>
+    <p style="color: #666; font-size: 13px; margin-bottom: 10px;">Enter Passcode to Access Portal</p>
+    <input type="password" id="login-password" placeholder="Enter Password">
+    <button onclick="handleLogin()">Unlock Portal</button>
+    <p id="login-err" style="color: red; font-size: 12px; margin-top: 10px; display: none;">Incorrect Passcode!</p>
   </div>
 </div>
 
-<!-- SIDEBAR NAVIGATION (NO NUMBERS, COMBINED MAIN HEADINGS) -->
+<!-- SIDEBAR NAVIGATION (MAJOR HEADINGS) -->
 <aside class="sidebar pinned" id="main-sidebar">
   <div class="sidebar-header">
     <a href="#" class="sidebar-brand">
@@ -138,122 +149,151 @@
     <button class="pin-btn" id="pin-toggle-btn" title="Toggle Sidebar">📌</button>
   </div>
   <ul class="sidebar-menu util" id="sidebar-nav-list">
-    <li class="nav-item"><button class="active" data-t="overview"><span class="nav-text">Overview &amp; Corporate Structure</span></button></li>
-    <li class="nav-item"><button data-t="strategy"><span class="nav-text">Business Strategy &amp; Models</span></button></li>
-    <li class="nav-item"><button data-t="operations"><span class="nav-text">Operations, Markets &amp; Tech</span></button></li>
-    <li class="nav-item"><button data-t="growth-risk"><span class="nav-text">Growth, Drivers &amp; Risks</span></button></li>
-    <li class="nav-item"><button class="highlight" data-t="suggestions" id="nav-sug-tab"><span class="nav-text">💡 Team Suggestions</span></button></li>
-    <li class="nav-item" id="nav-user-mgr" style="display:none;"><button class="highlight" data-t="usermgmt" style="color:var(--gold);"><span class="nav-text">👥 Manage Users</span></button></li>
-    <li class="nav-item"><button class="highlight" data-t="invoice-panel" style="color:var(--gold);"><span class="nav-text">💰 Live Estimate &amp; Invoice</span></button></li>
+    <li class="nav-item"><button class="active" data-t="tab-intro"><span class="nav-text">1. Introduction &amp; Structure</span></button></li>
+    <li class="nav-item"><button data-t="tab-problems"><span class="nav-text">2. Problems &amp; Competitors</span></button></li>
+    <li class="nav-item"><button data-t="tab-solutions"><span class="nav-text">3. Solutions &amp; Strategy</span></button></li>
+    <li class="nav-item"><button data-t="tab-models"><span class="nav-text">4. Business Models &amp; Monetization</span></button></li>
+    <li class="nav-item"><button data-t="tab-tech"><span class="nav-text">5. Tech, API &amp; Market Entry</span></button></li>
+    <li class="nav-item"><button data-t="tab-growth-risk"><span class="nav-text">6. Growth, Drivers &amp; Risks</span></button></li>
+    <li class="nav-item"><button data-t="tab-ceo"><span class="nav-text">7. CEO Playbook &amp; Operations</span></button></li>
+    
+    <!-- ADMIN ONLY TABS -->
+    <li class="nav-item admin-only-tab" style="display:none;"><button class="highlight" data-t="suggestions"><span class="nav-text">💡 Team Suggestions</span></button></li>
+    <li class="nav-item admin-only-tab" style="display:none;"><button class="highlight" data-t="usermgmt" style="color:var(--gold);"><span class="nav-text">👥 Manage Passcodes</span></button></li>
+    
+    <!-- DYNAMIC INVOICE & ESTIMATE TAB -->
+    <li class="nav-item"><button class="highlight" data-t="invoice-panel" style="color:var(--gold);"><span class="nav-text">💰 Dynamic Invoice &amp; Estimate</span></button></li>
   </ul>
 </aside>
 
 <main class="main-content">
   <header class="hero">
-    <div class="eyebrow util">Enterprise Master Operations Framework</div>
+    <div class="eyebrow util">Master Business Model — Full Detail Edition</div>
     <h1 class="brand">RubiNexus Group <span style="font-size:.55em; color:#c9d2e6;">→</span> <em>Nexus Freight</em></h1>
-    <div class="tag">Unified global business architecture, dynamic multi-currency financial calculation engine, and AI-powered stakeholder collaboration portal.</div>
+    <div class="tag">The complete 7-month master research plan: corporate structure, competitor breakdown, hybrid monetization, multi-currency cost calculations, and team collaboration.</div>
   </header>
 
-  <!-- PANEL 1: OVERVIEW & STRUCTURE -->
-  <section class="panel active" id="overview">
-    <h2 class="title">Overview &amp; Corporate Structure</h2>
-    <div class="sub">Core identity, parent holding framework, and initial operational assets.</div>
-
-    <h3 class="h3">Corporate Holding Structure</h3>
+  <!-- TAB 1: INTRODUCTION & STRUCTURE -->
+  <section class="panel active" id="tab-intro">
+    <h2 class="title">1. Introduction &amp; Corporate Structure</h2>
+    <div class="sub">What this company is, structured top-down, and what you're actually trying to build.</div>
+    <h3 class="h3">Corporate structure</h3>
     <ul>
-      <li><b>RubiNexus Group</b> — Parent holding company owning intellectual property, brand rights, and central financial accounts. Domain: <b>RubinexusGroup.com</b></li>
-      <li><b>Nexus Freight</b> — Operating brand for dispatching, load matching, and carrier tools. Domain: <b>NexusFreight.com</b></li>
+      <li><b>RubiNexus Group (RubinexusGroup.com)</b> — the parent holding company. It owns the intellectual property, the software, the bank accounts, and the brand rights.</li>
+      <li><b>Nexus Freight (NexusFreight.com)</b> — the operating brand customers actually see and use for dispatch, load matching, and driver tools.</li>
     </ul>
+    <h3 class="h3">Vision, in detail</h3>
+    <p class="body">Nexus Freight becomes the dispatcher independent drivers actually trust — transparent commission, fast payment, a real person to talk to, and technology that removes busywork. Five years out, the vision is a recognizable name in specific verticals with a dedicated driver community and enterprise clients.</p>
+    <div class="quote">"The goal isn't to out-build DAT. It's to be the dispatcher a specific group of drivers and shippers trust more than DAT."</div>
+  </section>
 
-    <h3 class="h3">Initial Setup Costs &amp; Domain Investment (AED Dynamic Engine)</h3>
-    <p class="body">Configure domain acquisition and setup estimates in AED or foreign currency equivalents:</p>
-    
-    <div class="cost-input-box">
-      <div><b>Parent Domain Asset (RubinexusGroup.com)</b><br><small style="color:var(--muted)">Base Registry &amp; Setup Fee</small></div>
-      <div style="display:flex; align-items:center; gap:8px;">
-        <select id="curr-domain" onchange="calculateFinancials()"><option value="AED">AED</option><option value="USD">USD</option><option value="PKR">PKR</option></select>
-        <input type="number" id="val-domain" value="500" oninput="calculateFinancials()">
+  <!-- TAB 2: PROBLEMS & COMPETITORS -->
+  <section class="panel" id="tab-problems">
+    <h2 class="title">2. Problems, Competitors &amp; Startup Challenges</h2>
+    <div class="sub">Everything working against this business on day one, named plainly.</div>
+    <h3 class="h3">Who the competitors actually are</h3>
+    <table class="rt">
+      <tr><th>Competitor</th><th>What they are</th><th>Why they're a threat</th></tr>
+      <tr><td>DAT Freight &amp; Analytics</td><td>Largest US load board</td><td>Massive network of brokers/carriers; deep brand trust</td></tr>
+      <tr><td>Truckstop.com</td><td>Second-largest US load board</td><td>Strong small-carrier base, lower price point</td></tr>
+      <tr><td>Uber Freight / Loadsmart</td><td>Tech-first digital brokerages</td><td>Large capital backing, instant-book tech</td></tr>
+    </table>
+    <h3 class="h3">Startup challenges</h3>
+    <ol style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:13.5px; line-height:1.8;">
+      <li><b>Cold-start problem:</b> No drivers means no loads, and vice-versa.</li>
+      <li><b>Limited capital:</b> Requires strict phase-gating of funds.</li>
+      <li><b>Driver payment trust:</b> Must guarantee fast turnaround to win loyalty.</li>
+    </ol>
+  </section>
+
+  <!-- TAB 3: SOLUTIONS & STRATEGY -->
+  <section class="panel" id="tab-solutions">
+    <h2 class="title">3. Solutions &amp; Strategic Sequence</h2>
+    <div class="sub">Matched solutions for every startup hurdle.</div>
+    <table class="rt">
+      <tr><th>Problem</th><th>Solution</th><th>Execution</th></tr>
+      <tr><td>Cold-start</td><td>Launch as a free utility tool first</td><td>Build invoice/rate-con generator before marketplace features.</td></tr>
+      <tr><td>Limited capital</td><td>Phase gating</td><td>MVP first, automation later, funded by revenue as it arrives.</td></tr>
+      <tr><td>Payment trust</td><td>Fast 24-48h payout</td><td>Honored without exception to drive word-of-mouth.</td></tr>
+    </table>
+  </section>
+
+  <!-- TAB 4: BUSINESS MODELS & MONETIZATION -->
+  <section class="panel" id="tab-models">
+    <h2 class="title">4. Business Model Options &amp; Monetization</h2>
+    <div class="sub">Hybrid model combining free utility, factoring referrals, and direct dispatch commissions.</div>
+    <div class="split2">
+      <div class="card">
+        <div class="badge">Option A</div>
+        <h4>Dispatch Commission</h4>
+        <p class="body">Take 5–10% commission per completed load on directly-sourced shipper loads.</p>
+      </div>
+      <div class="card">
+        <div class="badge opt">Option B</div>
+        <h4>Backend Monetization</h4>
+        <p class="body">Factoring referral fees ($50–$200/load) and fuel card kickbacks.</p>
       </div>
     </div>
   </section>
 
-  <!-- PANEL 2: STRATEGY & MODELS -->
-  <section class="panel" id="strategy">
-    <h2 class="title">Business Strategy &amp; Model Options</h2>
-    <div class="sub">Comprehensive evaluation of monetization pathways and multi-year outlooks.</div>
-    <h3 class="h3">Monetization &amp; Hybrid Sequence</h3>
-    <p class="body">Phase 1 utility launch (free invoice/rate-con generator) transitioning into factoring referral commissions and direct dispatch operations.</p>
+  <!-- TAB 5: TECH, API & MARKET ENTRY -->
+  <section class="panel" id="tab-tech">
+    <h2 class="title">5. Tech, API &amp; Market Entry</h2>
+    <div class="sub">API providers, regional rollout, and compliance requirements.</div>
+    <h3 class="h3">Market Entry Strategy</h3>
+    <ul>
+      <li><b>United States:</b> LLC formation (~$500–$1,500 setup), FMCSA licensing if broker authority is needed.</li>
+      <li><b>Canada &amp; Europe:</b> Safety Fitness Certificate (Canada) and VAT/local partner registration (EU).</li>
+    </ul>
   </section>
 
-  <!-- PANEL 3: OPERATIONS, MARKETS & TECH -->
-  <section class="panel" id="operations">
-    <h2 class="title">Operations, Markets &amp; Technology Stack</h2>
-    <div class="sub">API integration, licensing, and geographic rollout considerations.</div>
-
-    <h3 class="h3">API &amp; Developer Licensing (Dynamic Cost Calculator)</h3>
-    <div class="cost-input-box">
-      <div><b>Developer / Tech Infrastructure Licensing</b><br><small style="color:var(--muted)">App/Web MVP &amp; Third-Party API Gateway</small></div>
-      <div style="display:flex; align-items:center; gap:8px;">
-        <select id="curr-tech" onchange="calculateFinancials()"><option value="AED">AED</option><option value="USD">USD</option><option value="PKR">PKR</option></select>
-        <input type="number" id="val-tech" value="3500" oninput="calculateFinancials()">
-      </div>
-    </div>
+  <!-- TAB 6: GROWTH, DRIVERS & RISKS -->
+  <section class="panel" id="tab-growth-risk">
+    <h2 class="title">6. Growth, Driver Engagement &amp; Risk Analysis</h2>
+    <div class="sub">Scaling channels, retention mechanics, and risk mitigation.</div>
+    <h3 class="h3">Core Risk Mitigation</h3>
+    <ul>
+      <li><b>API Dependence:</b> Never architect core product around a single third-party data source.</li>
+      <li><b>Cash Flow Timing:</b> Maintain a standing 1–2 month operating buffer.</li>
+    </ul>
   </section>
 
-  <!-- PANEL 4: GROWTH, DRIVERS & RISKS -->
-  <section class="panel" id="growth-risk">
-    <h2 class="title">Growth, Driver Engagement &amp; Risk Mitigation</h2>
-    <div class="sub">Acquisition funnels, retention mechanics, and risk protocols.</div>
+  <!-- TAB 7: CEO PLAYBOOK & OPERATIONS -->
+  <section class="panel" id="tab-ceo">
+    <h2 class="title">7. CEO Playbook &amp; Operating Cadence</h2>
+    <div class="sub">Solo-founder milestones, hiring triggers, and weekly KPIs.</div>
+    <h3 class="h3">First Hires &amp; Triggers</h3>
+    <ol style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:13.5px; line-height:1.8;">
+      <li><b>Part-time Dispatch Support:</b> Triggered when founder cannot track active loads without errors.</li>
+      <li><b>Sales Lead:</b> Triggered when enterprise shipper discussions bottleneck founder time.</li>
+    </ol>
   </section>
 
-  <!-- PANEL 5: TEAM SUGGESTIONS -->
+  <!-- ADMIN ONLY: SUGGESTIONS -->
   <section class="panel" id="suggestions">
     <h2 class="title">Team Collaboration &amp; Suggestions Portal</h2>
-    <div class="sub">Submit ideas, feedback, or operational updates. Admin reviews and AI automatically translates entries into professional executive business language.</div>
-
-    <div style="background:#fff; padding:20px; border-radius:8px; border:1px solid #e3ddcd; margin-bottom:20px;">
-      <h3 class="h3" style="margin-top:0;">Submit New Suggestion</h3>
-      <label style="font-size:12px; font-weight:600;">Target Section:</label>
-      <select id="sug-section" style="width:100%; padding:8px; margin:6px 0 12px; border:1px solid #ccc; border-radius:4px;">
-        <option value="overview">Overview &amp; Corporate Structure</option>
-        <option value="strategy">Business Strategy &amp; Models</option>
-        <option value="operations">Operations &amp; Tech</option>
-        <option value="growth-risk">Growth &amp; Risks</option>
-      </select>
-      <label style="font-size:12px; font-weight:600;">Your Raw Suggestion / Idea:</label>
-      <textarea id="sug-raw-text" placeholder="e.g. Fuel card per discount barha deni chahiye taake drivers attract ho sakein..." style="width:100%; height:90px; padding:10px; border:1px solid #ccc; border-radius:4px;"></textarea>
-      <button class="btn-modal primary" onclick="submitUserSuggestion()" style="background:var(--navy); color:#fff; border:none; padding:10px 20px; border-radius:4px; cursor:pointer; margin-top:8px; font-weight:bold;">Submit to AI Review Queue</button>
-    </div>
-
-    <h3 class="h3">Submitted Suggestions &amp; Admin Review Queue</h3>
+    <div class="sub">Review team suggestions translated by AI into professional business language.</div>
     <div id="suggestions-list-container"></div>
   </section>
 
-  <!-- PANEL 6: MANAGE USERS (ADMIN ONLY) -->
+  <!-- ADMIN ONLY: USER MGMT -->
   <section class="panel" id="usermgmt">
-    <h2 class="title">Manage Portal Users</h2>
-    <div class="sub">Add or remove team members (e.g. Hassan, Huraira, Rida) and configure access levels.</div>
-    
-    <div style="background:#fff; padding:20px; border-radius:8px; border:1px solid #e3ddcd; margin-bottom:20px;">
-      <h3 class="h3" style="margin-top:0;">Add New Team User</h3>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <input type="text" id="new-user-name" placeholder="Username (e.g. Huraira)" style="flex:1; padding:8px; border:1px solid #ccc; border-radius:4px;">
-        <input type="password" id="new-user-pass" placeholder="Passcode" style="flex:1; padding:8px; border:1px solid #ccc; border-radius:4px;">
-        <select id="new-user-role" style="padding:8px; border:1px solid #ccc; border-radius:4px;">
-          <option value="user">Collaborator</option>
-          <option value="admin">Admin (Hassan)</option>
-        </select>
-        <button onclick="addNewUser()" style="background:var(--gold); color:#000; border:none; padding:8px 16px; font-weight:bold; border-radius:4px; cursor:pointer;">Add User</button>
-      </div>
+    <h2 class="title">Manage Passcodes</h2>
+    <div class="sub">Configure access credentials for parent account and team members.</div>
+    <div style="background:#fff; padding:20px; border-radius:8px; border:1px solid #e3ddcd;">
+      <p style="margin:0; font-size:13.5px;"><b>Active Passcodes:</b></p>
+      <ul style="margin-top:6px;">
+        <li><b>Hassan (Parent Account):</b> <code>R1821</code> (Full Admin Access)</li>
+        <li><b>Hurairah:</b> <code>hurairah</code> (Standard Access)</li>
+        <li><b>Rida:</b> <code>rida</code> (Standard Access)</li>
+      </ul>
     </div>
-    <div id="users-list-container"></div>
   </section>
 
-  <!-- PANEL 7: LIVE ESTIMATE & INVOICE -->
+  <!-- DYNAMIC INVOICE & EXPENSE ESTIMATE TAB -->
   <section class="panel" id="invoice-panel">
-    <h2 class="title">Live Estimate &amp; Enterprise Invoice</h2>
-    <div class="sub">Consolidated expense sheet converted into a live financial invoice with automatic AED conversion.</div>
+    <h2 class="title">Dynamic Invoice &amp; Expense Estimate Engine</h2>
+    <div class="sub">Add multiple domains, tech licenses, or expenses. All amounts automatically convert into AED totals.</div>
 
     <div class="invoice-card">
       <div class="invoice-header">
@@ -268,53 +308,50 @@
       </div>
 
       <table class="rt">
-        <tr><th>Expense Item / Asset</th><th>Category</th><th>Entered Amount</th><th>Converted AED Total</th></tr>
-        <tr><td>Parent Domain (RubinexusGroup.com)</td><td>Setup</td><td><span id="inv-item-1-raw">0</span></td><td><span id="inv-item-1-aed">0</span> AED</td></tr>
-        <tr><td>Tech / API Licensing &amp; MVP</td><td>Engineering</td><td><span id="inv-item-2-raw">0</span></td><td><span id="inv-item-2-aed">0</span> AED</td></tr>
-        <tr><td>Legal &amp; Business Registration</td><td>Compliance</td><td>500 AED</td><td>500 AED</td></tr>
+        <thead>
+          <tr><th>Expense Item / Asset Description</th><th>Category</th><th>Amount &amp; Currency</th><th>AED Total</th><th>Action</th></tr>
+        </thead>
+        <tbody id="invoice-items-body">
+          <!-- Dynamic items will be added here -->
+        </tbody>
       </table>
 
+      <button onclick="addInvoiceItem()" style="background:var(--navy); color:#fff; border:none; padding:8px 14px; font-weight:bold; border-radius:4px; cursor:pointer; font-size:12px; margin-top:5px;">➕ Add New Expense Item</button>
+
       <div class="invoice-total-banner">
-        <span>Estimated Total Initial Capital Required:</span>
-        <span class="n" id="invoice-grand-total">0 AED</span>
+        <span>Estimated Total Capital Required:</span>
+        <span class="n" id="invoice-grand-total">0.00 AED</span>
       </div>
     </div>
   </section>
 </main>
 
 <script>
-  // CURRENCY CONVERSION RATES TO AED
   const exchangeRates = { "AED": 1.0, "USD": 3.67, "PKR": 0.013 };
 
-  // INITIAL USERS DB (Can be managed via Supabase or LocalStorage)
-  let portalUsers = JSON.parse(localStorage.getItem('rubi_users')) || [
-    { username: 'Hassan', pass: 'R1821', role: 'admin' },
-    { username: 'Huraira', pass: 'huraira123', role: 'user' },
-    { username: 'Rida', pass: 'rida123', role: 'user' }
+  // Dynamic Invoice Items State
+  let invoiceItems = [
+    { desc: "Parent Domain (RubinexusGroup.com)", category: "Setup", amount: 500, currency: "AED" },
+    { desc: "Brand Domain (NexusFreight.com)", category: "Setup", amount: 500, currency: "AED" },
+    { desc: "Tech / API Licensing & MVP", category: "Engineering", amount: 3500, currency: "AED" },
+    { desc: "Legal & Business Registration", category: "Compliance", amount: 500, currency: "AED" }
   ];
 
-  let currentUser = null;
-  let suggestions = JSON.parse(localStorage.getItem('rubi_suggestions')) || [];
-
-  // LOGIN LOGIC
   function handleLogin() {
-    let u = document.getElementById('login-username').value.trim();
     let p = document.getElementById('login-password').value.trim();
-
-    let found = portalUsers.find(x => x.username.toLowerCase() === u.toLowerCase() && x.pass === p);
-    if (found) {
-      currentUser = found;
+    if (p === 'R1821') {
       document.getElementById('auth-overlay').style.display = 'none';
-      if(currentUser.role === 'admin') {
-        document.getElementById('nav-user-mgr').style.display = 'block';
-      }
+      document.querySelectorAll('.admin-only-tab').forEach(el => el.style.display = 'block');
+      renderAll();
+    } else if (p === 'hurairah' || p === 'rida') {
+      document.getElementById('auth-overlay').style.display = 'none';
+      document.querySelectorAll('.admin-only-tab').forEach(el => el.style.display = 'none');
       renderAll();
     } else {
       document.getElementById('login-err').style.display = 'block';
     }
   }
 
-  // SIDEBAR & TABS
   document.querySelectorAll('.sidebar-menu button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.sidebar-menu button').forEach(b => b.classList.remove('active'));
@@ -336,128 +373,94 @@
   pinBtn.addEventListener('click', () => { isPinned = !isPinned; applyPin(); });
   applyPin();
 
-  // DYNAMIC FINANCIAL CALCULATION
-  function calculateFinancials() {
-    let curDomain = document.getElementById('curr-domain').value;
-    let valDomain = parseFloat(document.getElementById('val-domain').value) || 0;
-    let aedDomain = valDomain * exchangeRates[curDomain];
-
-    let curTech = document.getElementById('curr-tech').value;
-    let valTech = parseFloat(document.getElementById('val-tech').value) || 0;
-    let aedTech = valTech * exchangeRates[curTech];
-
-    let legalAed = 500; // Fixed AED
-
-    document.getElementById('inv-item-1-raw').innerText = valDomain + " " + curDomain;
-    document.getElementById('inv-item-1-aed').innerText = aedDomain.toFixed(2);
-
-    document.getElementById('inv-item-2-raw').innerText = valTech + " " + curTech;
-    document.getElementById('inv-item-2-aed').innerText = aedTech.toFixed(2);
-
-    let grandTotal = aedDomain + aedTech + legalAed;
-    document.getElementById('invoice-grand-total').innerText = grandTotal.toFixed(2) + " AED";
+  // DYNAMIC INVOICE ENGINE FUNCTIONS
+  function addInvoiceItem() {
+    invoiceItems.push({ desc: "New Custom Asset / Expense", category: "Operations", amount: 100, currency: "AED" });
+    renderInvoice();
   }
 
-  // SUBMIT SUGGESTION
-  function submitUserSuggestion() {
-    let section = document.getElementById('sug-section').value;
-    let rawText = document.getElementById('sug-raw-text').value.trim();
-    if(!rawText) return alert("Please enter your suggestion first.");
-
-    let newSug = {
-      id: Date.now(),
-      author: currentUser ? currentUser.username : 'Guest',
-      section: section,
-      rawText: rawText,
-      aiText: "Strategic Executive Update: " + rawText.replace(/chahiye|chahaiye/gi, "shall be implemented to optimize") + " (Approved operational enhancement).",
-      status: 'pending'
-    };
-
-    suggestions.push(newSug);
-    localStorage.setItem('rubi_suggestions', JSON.stringify(suggestions));
-    document.getElementById('sug-raw-text').value = '';
-    alert("Suggestion submitted successfully to review queue!");
-    renderSuggestions();
+  function removeInvoiceItem(index) {
+    invoiceItems.splice(index, 1);
+    renderInvoice();
   }
 
-  // AI SIMULATED TRANSLATION & APPROVAL
-  function approveSuggestion(id) {
-    let item = suggestions.find(s => s.id === id);
-    if(item) {
-      item.status = 'approved';
-      localStorage.setItem('rubi_suggestions', JSON.stringify(suggestions));
-      renderSuggestions();
+  function updateItemField(index, field, value) {
+    if (field === 'amount') {
+      invoiceItems[index][field] = parseFloat(value) || 0;
+    } else {
+      invoiceItems[index][field] = value;
     }
+    renderInvoice(false); // Do not re-render table DOM completely to prevent input blur
   }
 
-  function deleteSuggestion(id) {
-    suggestions = suggestions.filter(s => s.id !== id);
-    localStorage.setItem('rubi_suggestions', JSON.stringify(suggestions));
-    renderSuggestions();
-  }
+  function renderInvoice(fullRedraw = true) {
+    const tbody = document.getElementById('invoice-items-body');
+    let grandTotal = 0;
 
-  function renderSuggestions() {
-    let container = document.getElementById('suggestions-list-container');
-    if(suggestions.length === 0) {
-      container.innerHTML = `<p style="color:#777; font-size:13px;">No suggestions submitted yet.</p>`;
+    if (!fullRedraw) {
+      // Just recalculate totals without wiping inputs
+      invoiceItems.forEach((item, idx) => {
+        let aedVal = item.amount * exchangeRates[item.currency];
+        grandTotal += aedVal;
+        let totalSpan = document.getElementById(`item-aed-${idx}`);
+        if(totalSpan) totalSpan.innerText = aedVal.toFixed(2) + " AED";
+      });
+      document.getElementById('invoice-grand-total').innerText = grandTotal.toFixed(2) + " AED";
       return;
     }
 
+    tbody.innerHTML = invoiceItems.map((item, idx) => {
+      let aedVal = item.amount * exchangeRates[item.currency];
+      grandTotal += aedVal;
+
+      return `
+        <tr>
+          <td><input type="text" value="${item.desc}" oninput="updateItemField(${idx}, 'desc', this.value)" style="width:100%; padding:6px; border:1px solid #ccc; border-radius:4px;"></td>
+          <td><input type="text" value="${item.category}" oninput="updateItemField(${idx}, 'category', this.value)" style="width:90px; padding:6px; border:1px solid #ccc; border-radius:4px;"></td>
+          <td>
+            <div style="display:flex; gap:6px;">
+              <input type="number" value="${item.amount}" oninput="updateItemField(${idx}, 'amount', this.value)" style="width:80px; padding:6px; border:1px solid #ccc; border-radius:4px; font-weight:bold;">
+              <select onchange="updateItemField(${idx}, 'currency', this.value)" style="padding:4px; border:1px solid #ccc; border-radius:4px;">
+                <option value="AED" ${item.currency==='AED'?'selected':''}>AED</option>
+                <option value="USD" ${item.currency==='USD'?'selected':''}>USD</option>
+                <option value="PKR" ${item.currency==='PKR'?'selected':''}>PKR</option>
+              </select>
+            </div>
+          </td>
+          <td><b id="item-aed-${idx}">${aedVal.toFixed(2)} AED</b></td>
+          <td><button onclick="removeItemAndRedraw(${idx})" style="background:var(--red); color:#fff; border:none; padding:5px 8px; border-radius:4px; cursor:pointer; font-size:11px;">Remove</button></td>
+        </tr>
+      `;
+    }).join('');
+
+    document.getElementById('invoice-grand-total').innerText = grandTotal.toFixed(2) + " AED";
+  }
+
+  function removeItemAndRedraw(idx) {
+    invoiceItems.splice(idx, 1);
+    renderInvoice(true);
+  }
+
+  let suggestions = JSON.parse(localStorage.getItem('rubi_suggestions')) || [];
+  function renderSuggestions() {
+    let container = document.getElementById('suggestions-list-container');
+    if(!container) return;
+    if(suggestions.length === 0) {
+      container.innerHTML = `<p style="color:#777; font-size:13px;">No suggestions in review queue.</p>`;
+      return;
+    }
     container.innerHTML = suggestions.map(s => `
       <div class="sug-box">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <b>By: ${s.author}</b>
-          <span class="badge-tag">${s.status}</span>
-        </div>
+        <span class="badge-tag">${s.status}</span>
         <p style="margin:6px 0; color:#555; font-size:12.5px;"><b>Raw Idea:</b> ${s.rawText}</p>
-        <p style="margin:6px 0; background:#f4faf6; padding:8px; border-left:3px solid var(--green); font-size:13px;"><b>AI Professional Translation:</b> ${s.aiText}</p>
-        ${currentUser && currentUser.role === 'admin' && s.status === 'pending' ? `
-          <button onclick="approveSuggestion(${s.id})" style="background:var(--green); color:#fff; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; font-weight:bold; font-size:12px;">Approve &amp; Finalize</button>
-        ` : ''}
-        ${currentUser && currentUser.role === 'admin' ? `
-          <button onclick="deleteSuggestion(${s.id})" style="background:var(--red); color:#fff; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; font-weight:bold; font-size:12px; margin-left:6px;">Delete</button>
-        ` : ''}
-      </div>
-    `).join('');
-  }
-
-  // USER MANAGEMENT
-  function addNewUser() {
-    let u = document.getElementById('new-user-name').value.trim();
-    let p = document.getElementById('new-user-pass').value.trim();
-    let r = document.getElementById('new-user-role').value;
-    if(!u || !p) return alert("Enter username and passcode.");
-
-    portalUsers.push({ username: u, pass: p, role: r });
-    localStorage.setItem('rubi_users', JSON.stringify(portalUsers));
-    document.getElementById('new-user-name').value = '';
-    document.getElementById('new-user-pass').value = '';
-    renderUsers();
-    alert("User added successfully!");
-  }
-
-  function deleteUser(uname) {
-    if(uname === 'Hassan') return alert("Cannot delete primary admin.");
-    portalUsers = portalUsers.filter(x => x.username !== uname);
-    localStorage.setItem('rubi_users', JSON.stringify(portalUsers));
-    renderUsers();
-  }
-
-  function renderUsers() {
-    let container = document.getElementById('users-list-container');
-    if(!container) return;
-    container.innerHTML = portalUsers.map(u => `
-      <div style="background:#fff; padding:10px 14px; border:1px solid #ddd; border-radius:4px; display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-        <div><b>${u.username}</b> (${u.role})</div>
-        ${u.username !== 'Hassan' ? `<button onclick="deleteUser('${u.username}')" style="background:var(--red); color:#fff; border:none; padding:4px 10px; border-radius:4px; cursor:pointer; font-size:11px;">Remove</button>` : ''}
+        <p style="margin:6px 0; background:#f4faf6; padding:8px; border-left:3px solid var(--green); font-size:13px;"><b>AI Translation:</b> ${s.aiText}</p>
       </div>
     `).join('');
   }
 
   function renderAll() {
-    calculateFinancials();
+    renderInvoice(true);
     renderSuggestions();
-    renderUsers();
   }
 </script>
 </body>
